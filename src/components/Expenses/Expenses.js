@@ -17,6 +17,15 @@ const Expenses = (props) => {
           selected={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        {props.items.map((expense) => (
+          <ExpenseItem
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))}
+        {/* Todos estos componentes de ExpenseItem los voy a crear mapeando el array  */}
+        {/* 
         <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
@@ -36,7 +45,7 @@ const Expenses = (props) => {
           title={props.items[3].title}
           amount={props.items[3].amount}
           date={props.items[3].date}
-        ></ExpenseItem>
+        ></ExpenseItem> */}
       </Card>
     </div>
   );
